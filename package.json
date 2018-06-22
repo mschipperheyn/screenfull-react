@@ -27,6 +27,7 @@
   "module": "dist/screenfull-react.es.js",
   "jsnext:main": "dist/screenfull-react.es.js",
   "dependencies": {
+    "rollup-plugin-terser": "^1.0.1",
     "screenfull": "^3.3.2",
     "uglify-js": "^3.4.1"
   },

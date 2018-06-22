@@ -3,7 +3,7 @@ import path from 'path';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from "rollup-plugin-terser";
 import visualizer from 'rollup-plugin-visualizer';
 import replace from 'rollup-plugin-replace';
 
@@ -34,12 +34,11 @@ const plugins = [
   }),
   replace({
     'process.env.NODE_ENV': JSON.stringify('production')
-  }),
-  uglify()
+  })
 ];
 
 if (prod)
-  plugins.push(uglify(), visualizer({ filename: './bundle-stats.html' }));
+  plugins.push(terser(), visualizer({ filename: './bundle-stats.html' }));
 
 const input = 'src/index.js';
 const outputName = 'screenfull-react';
