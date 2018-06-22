@@ -6,6 +6,8 @@ A React component that implements [screenfull.js](https://github.com/sindresorhu
 
 Screenfull.js allows you to create full screen experiences. I implemented it because I wanted to have that behavior that removes the address bar and navbar on scroll on mobile devices, like you see on sites such as cnn.com. There is another library: screenfull-react, but it wasn't hosted on Github and looking at the source, I didn't like it, so here's the alternative.
 
+This should work fine in SSR environments.
+
 ## Usage
 
 ### Installation
@@ -23,21 +25,25 @@ There are two ways to use screenfull-react:
 
 In other to implement it, just add `<Screenfull />` to your component. 
 
-## API
+## Properties
 
-### scrollContainerRef (default: null)
+### scrollContainerRef
+####(default: null)
 
 The container that is used as a reference to detect scrolling. By default this is null and refers to the document.body.
 
-### forceFullScreen (default: false),
+### forceFullScreen
+#### (default: false)
 
 Use <Screenfull forceFullScreen /> to force the full screen without additional interaction. Useful for modals etc.
 
-### mobileOnly (default: true)
+### mobileOnly 
+####(default: true)
 
 Only execute full screen on a mobile device. This is currently simply checked based on window width. 
 
-### maxPixelsForMobile (default: 768)
+### maxPixelsForMobile 
+####(default: 768)
 
 The amount of pixels that is considered "mobile".
 
