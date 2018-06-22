@@ -13,10 +13,10 @@ const mode = prod ? 'production' : 'development';
 console.log(`Creating ${mode} bundle...`);
 
 const targets = prod
-  ? [{ dest: 'dist/mm-loaders.min.js', format: 'umd' }]
+  ? [{ dest: 'dist/screenfull-react.min.js', format: 'umd' }]
   : [
-      { dest: 'dist/mm-loaders.js', format: 'umd' },
-      { dest: 'dist/mm-loaders.es.js', format: 'es' }
+      { dest: 'dist/screenfull-react.js', format: 'umd' },
+      { dest: 'dist/screenfull-react.es.js', format: 'es' }
     ];
 
 const babelrc = JSON.parse(fs.readFileSync(path.join(__dirname, './.babelrc')));
@@ -60,15 +60,14 @@ if (prod)
 export default {
   input: 'src/index.js',
   output: {
-    file: 'dist/mm-loaders.js',
+    file: 'dist/screenfull-react.js',
     format: 'cjs'
   },
-  moduleName: 'styled',
-  external: ['react', 'react-dom', 'prop-types', 'styled-components'],
+  moduleName: 'screenfull-react',
+  external: ['react', 'react-dom', 'prop-types'],
   globals: {
     react: 'React',
-    'react-dom': 'ReactDOM',
-    'styled-components': 'styled'
+    'react-dom': 'ReactDOM'
   },
   exports: 'named',
   targets,
