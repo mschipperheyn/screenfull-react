@@ -4,10 +4,13 @@
   "author": "Marc Schipperheyn (m.schipperheyn@gmail.com)",
   "user": "mschipperheyn",
   "version": "0.0.1",
-  "keywords": ["react", "reactjs", "screenfull-react"],
+  "keywords": [
+    "react",
+    "reactjs",
+    "screenfull-react"
+  ],
   "scripts": {
-    "start":
-      "cross-env NODE_ENV=development webpack-dev-server --config examples/webpack.config.babel.js --hot",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config examples/webpack.config.babel.js --hot",
     "build": "npm run build:lib && npm run build:dist",
     "prebuild:lib": "rm -rf lib/*",
     "build:lib": "babel --out-dir lib src",
@@ -15,10 +18,8 @@
     "prebuild:dist": "rm -rf dist/*",
     "build:dist": "rollup -c && cross-env NODE_ENV=production rollup -c",
     "build:watch": "npm run build:lib -- --watch",
-    "test:lint":
-      "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache",
-    "demo:build":
-      "cross-env NODE_ENV=production webpack --config examples/webpack.config.babel.js",
+    "test:lint": "eslint . --ext .js --ext .jsx --ignore-path .gitignore --ignore-pattern dist --cache",
+    "demo:build": "cross-env NODE_ENV=production webpack --config examples/webpack.config.babel.js",
     "lint": "eslint 'src/**/*.js'",
     "prepublish": "npm run build"
   },
@@ -73,9 +74,20 @@
   },
   "jest": {
     "collectCoverage": true,
-    "moduleFileExtensions": ["js", "jsx"],
-    "moduleDirectories": ["node_modules", "packages"]
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "packages"
+    ]
   },
   "license": "MIT",
-  "pre-push": ["test"]
+  "pre-push": [
+    "test"
+  ],
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  }
 }
