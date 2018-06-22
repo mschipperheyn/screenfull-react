@@ -50,9 +50,10 @@ The amount of pixels that is considered "mobile".
 ## FAQ
 
 ### The address bar doesn't hide on scroll
-    Make sure the item you are trying to scroll (by default: `body`) doesn't apply a `overflow: hidden`, `overflow-x: hidden` or `overflow-y: hidden` to it. On some browsers, this leads the scrollTop to always be 0.
 
-    Also make sure you apply the Component inside a Component that has a `HTML` (e.g. `div`) tag, not a `React.Fragment`.
+Make sure the item you are trying to scroll (by default: `body`) doesn't apply a `overflow: hidden`, `overflow-x: hidden` or `overflow-y: hidden` to it. On some browsers, this leads the scrollTop to always be 0.
+
+Also make sure you apply the Component inside a Component that has a `HTML` (e.g. `div`) tag, not a `React.Fragment`.
 
 
 ## Run examples
