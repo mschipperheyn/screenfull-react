@@ -1,0 +1,6 @@
+node_modules
+dist
+lib
+bundle-stats.html
+*.workspace
+yarn-error.log
