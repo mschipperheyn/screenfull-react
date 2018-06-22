@@ -28,22 +28,22 @@ In other to implement it, just add `<Screenfull />` to your component.
 ## Properties
 
 ### scrollContainerRef
-####(default: null)
+#### default: null
 
 The container that is used as a reference to detect scrolling. By default this is null and refers to the document.body.
 
 ### forceFullScreen
-#### (default: false)
+#### default: false
 
 Use <Screenfull forceFullScreen /> to force the full screen without additional interaction. Useful for modals etc.
 
 ### mobileOnly 
-####(default: true)
+#### default: true
 
 Only execute full screen on a mobile device. This is currently simply checked based on window width. 
 
 ### maxPixelsForMobile 
-####(default: 768)
+#### default: 768
 
 The amount of pixels that is considered "mobile".
 
