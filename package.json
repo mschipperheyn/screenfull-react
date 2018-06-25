@@ -27,9 +27,8 @@
   "module": "dist/screenfull-react.es.js",
   "jsnext:main": "dist/screenfull-react.es.js",
   "dependencies": {
-    "rollup-plugin-terser": "^1.0.1",
-    "screenfull": "^3.3.2",
-    "uglify-js": "^3.4.1"
+
+    "screenfull": "^3.3.2"
   },
   "peerDependencies": {
     "react": ">=15.4.0",
@@ -47,6 +46,13 @@
     "babel-preset-es2015-rollup": "^3.0.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-eslint": "^8.2.3",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-node": "^6.0.1",
+    "rollup-plugin-terser": "^1.0.1",
     "chai": "^3.5.0",
     "cross-env": "^5.0.0",
     "eslint": "^3.19.0",

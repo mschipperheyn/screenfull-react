@@ -1,6 +1,6 @@
 {
   "extends": [
-    "standard",
+    "eslint-config-airbnb",
     "standard-react",
     "plugin:react/recommended"
   ]

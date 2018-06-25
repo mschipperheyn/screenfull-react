@@ -42,7 +42,7 @@ if (prod)
 
 const input = 'src/index.js';
 const outputName = 'screenfull-react';
-const external = ['react', 'react-dom', 'prop-types'];
+const external = ['react', 'react-dom'];
 const globals = {
   react: 'React',
   'react-dom': 'ReactDOM'
@@ -71,7 +71,7 @@ export default {
       file: 'dist/screenfull-react.es.js',
       format: 'es',
       globals,
-      sourceMap: true,
+      sourcemap: true,
       exports: 'named'
     }
   ],
