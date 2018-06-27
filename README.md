@@ -1,4 +1,4 @@
-[(https://david-dm.org/mschipperheyn/screenfull-react.svg)](https://david-dm.org/mschipperheyn/screenfull-react)
+[[![Dependency Status](https://david-dm.org/mschipperheyn/screenfull-react.svg)](https://david-dm.org/mschipperheyn/screenfull-react)
 
 # Screenfull React
 
