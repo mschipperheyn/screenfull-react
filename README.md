@@ -1,4 +1,4 @@
-[![build status](https://secure.travis-ci.org/mschipperheyn/screenfull-react.svg)](http://travis-ci.org/mschipperheyn/screenfull-react) [![bitHound Score](https://www.bithound.io/github/mschipperheyn/screenfull-react/badges/score.svg)](https://www.bithound.io/github/mschipperheyn/screenfull-react) [![Dependency Status](https://david-dm.org/mschipperheyn/screenfull-react.svg)](https://david-dm.org/mschipperheyn/screenfull-react)
+[(https://david-dm.org/mschipperheyn/screenfull-react.svg)](https://david-dm.org/mschipperheyn/screenfull-react)
 
 # Screenfull React
 
@@ -7,6 +7,8 @@ A React component that implements [screenfull.js](https://github.com/sindresorhu
 Screenfull.js allows you to create full screen experiences. I implemented it because I wanted to have that behavior that removes the address bar and navbar on scroll on mobile devices, like you see on sites such as cnn.com. There is another library: screenfull-react, but it wasn't hosted on Github and looking at the source, I didn't like it, so here's the alternative.
 
 This should work fine in SSR environments.
+
+![Example](./cnn_capture.gif)
 
 ## Usage
 
