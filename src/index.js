@@ -11,6 +11,14 @@ import screenfull from "screenfull";
 
 const getFullScreenNode = () => document.documentElement || document.body;
 
+const isMobile = maxPixelsForMobile => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  const width = window.innerWidth;
+  return width <= maxPixelsForMobile;
+};
+
 const Screenfull = ({
   scrollContainerRef,
   forceFullScreen,
@@ -18,14 +26,6 @@ const Screenfull = ({
   maxPixelsForMobile
 }) => {
   const scroll = React.useRef(0);
-
-  const isMobile = React.useCallback(() => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-    const width = window.innerWidth;
-    return width <= maxPixelsForMobile;
-  }, []);
 
   const handleScroll = React.useCallback(event => {
     const scrollPos = event.currentTarget.scrollTop;
@@ -51,7 +51,7 @@ const Screenfull = ({
   });
 
   React.useEffect(() => {
-    if (mobileOnly && !isMobile()) {
+    if (mobileOnly && !isMobile(maxPixelsForMobile)) {
       return;
     }
     if (forceFullScreen) {
@@ -68,9 +68,6 @@ const Screenfull = ({
 
   React.useEffect(() => {
     return () => {
-      if (mobileOnly && !isMobile()) {
-        return;
-      }
       if (screenfull.isEnabled) {
         screenfull.exit();
       }
@@ -84,14 +81,14 @@ const Screenfull = ({
   return null;
 };
 
-Screenfull.propTypes = {
+Screenfull.propTypes /* remove-proptypes */ = {
   scrollContainerRef: PropTypes.element,
   forceFullScreen: PropTypes.bool,
   mobileOnly: PropTypes.bool,
   maxPixelsForMobile: PropTypes.number
 };
 
-Screenfull.defaultProps = {
+Screenfull.defaultProps /* remove-proptypes */ = {
   scrollContainerRef: null,
   forceFullScreen: false,
   mobileOnly: true,

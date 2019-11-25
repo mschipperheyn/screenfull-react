@@ -4,6 +4,8 @@
 
 A React component that implements [screenfull.js](https://github.com/sindresorhus/screenfull.js/).
 
+*0.2 version with hooks*
+
 Screenfull.js allows you to create full screen experiences. I implemented it because I wanted to have that behavior that removes the address bar and navbar on scroll on mobile devices, like you see on sites such as cnn.com. There is another library: react-screenfull, but it wasn't hosted on Github and looking at the source, I didn't like it, so here's the alternative.
 
 This should work fine in SSR environments.
@@ -55,7 +57,7 @@ The amount of pixels that is considered "mobile".
 
 Make sure the item you are trying to scroll (by default: `body`) doesn't apply a `overflow: hidden`, `overflow-x: hidden` or `overflow-y: hidden` to it. On some browsers, this leads the scrollTop to always be 0.
 
-Also make sure you apply the Component inside a Component that has a `HTML` (e.g. `div`) tag, not a `React.Fragment`.
+Also make sure you apply the Component inside a Component that results in a `HTML` (e.g. `div`) tag, not a `React.Fragment`.
 
 
 ## Run examples
