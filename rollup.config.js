@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import { terser } from "rollup-plugin-terser";
 import visualizer from 'rollup-plugin-visualizer';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 
 const prod = process.env.NODE_ENV === 'production';
 const mode = prod ? 'production' : 'development';
@@ -19,8 +19,8 @@ const plugins = [
     Object.assign({}, babelrc, {
       babelrc: false,
       exclude: 'node_modules/**',
-      presets: ['es2015-rollup', 'react'],
-      plugins: babelrc.plugins.concat(['external-helpers', 'transform-object-rest-spread', 'transform-class-properties'])
+      presets: ['@babel/react'],
+      plugins: babelrc.plugins.concat(['@babel/plugin-external-helpers'])
     })
   ),
   nodeResolve({
