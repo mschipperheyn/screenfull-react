@@ -3,7 +3,7 @@
   "description": "Full screen experiences for mobile",
   "author": "Marc Schipperheyn (m.schipperheyn@gmail.com)",
   "user": "mschipperheyn",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "react",
     "reactjs",
@@ -51,7 +51,6 @@
     "eslint-config-airbnb": "^17.0.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-standard-react": "^5.0.0",
-    "eslint-plugin-class-property": "^1.1.0",
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-node": "^6.0.1",
