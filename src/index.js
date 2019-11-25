@@ -1,8 +1,8 @@
 /* eslint-env browser */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import screenfull from 'screenfull';
+import React from "react";
+import ReactDOM from "react-dom";
+import PropTypes from "prop-types";
+import screenfull from "screenfull";
 
 /**
  * The underlying scrollContainerRef should be an actual node, not a Fragment. Otherwise, it will just be null
@@ -11,11 +11,16 @@ import screenfull from 'screenfull';
 
 const getFullScreenNode = () => document.documentElement || document.body;
 
-const Screenfull = ({ scrollContainerRef, forceFullScreen, mobileOnly, maxPixelsForMobile }) => {
+const Screenfull = ({
+  scrollContainerRef,
+  forceFullScreen,
+  mobileOnly,
+  maxPixelsForMobile
+}) => {
   const scroll = React.useRef(0);
 
   const isMobile = React.useCallback(() => {
-    if (typeof window === 'undefined') {
+    if (typeof window === "undefined") {
       return false;
     }
     const width = window.innerWidth;
@@ -24,17 +29,17 @@ const Screenfull = ({ scrollContainerRef, forceFullScreen, mobileOnly, maxPixels
 
   const handleScroll = React.useCallback(event => {
     const scrollPos = event.currentTarget.scrollTop;
-    let going = 'down';
+    let going = "down";
     const scrollCurrent = scroll.current;
     if (scrollCurrent !== 0 && scrollPos < scrollCurrent) {
-      going = 'up';
+      going = "up";
     }
 
     scroll.current = scrollPos;
 
-    if (going === 'up' && screenfull.isFullscreen) {
+    if (going === "up" && screenfull.isFullscreen) {
       screenfull.exit();
-    } else if (going === 'down' && !screenfull.isFullscreen) {
+    } else if (going === "down" && !screenfull.isFullscreen) {
       screenfull.request(getFullScreenNode());
     }
   }, []);
@@ -42,44 +47,42 @@ const Screenfull = ({ scrollContainerRef, forceFullScreen, mobileOnly, maxPixels
   const getNode = React.useCallback(() => {
     return scrollContainerRef
       ? ReactDOM.findDOMNode(scrollContainerRef) // eslint-disable-line react/no-find-dom-node
-      : typeof document !== 'undefined' && document.body;
-  })
+      : typeof document !== "undefined" && document.body;
+  });
 
   React.useEffect(() => {
     if (mobileOnly && !isMobile()) {
       return;
     }
     if (forceFullScreen) {
-      if (screenfull.enabled) {
+      if (screenfull.isEnabled) {
         screenfull.request(getFullScreenNode());
       }
       return;
     }
     const node = getNode();
-    if (node && screenfull.enabled) {
-      node.addEventListener('scroll', handleScroll, { passive: true }, true);
+    if (node && screenfull.isEnabled) {
+      node.addEventListener("scroll", handleScroll, { passive: true }, true);
     }
+  }, [mobileOnly, forceFullScreen]);
 
+  React.useEffect(() => {
     return () => {
       if (mobileOnly && !isMobile()) {
         return;
       }
-      if (screenfull.enabled) {
+      if (screenfull.isEnabled) {
         screenfull.exit();
       }
-      if (forceFullScreen) {
-        return;
-      }
       const node = getNode();
-      if (node && screenfull.enabled) {
-        node.removeEventListener('scroll', handleScroll);
+      if (node) {
+        node.removeEventListener("scroll", handleScroll);
       }
-    }
+    };
   }, []);
 
-    return null;
-  
-}
+  return null;
+};
 
 Screenfull.propTypes = {
   scrollContainerRef: PropTypes.element,

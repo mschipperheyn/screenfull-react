@@ -1,15 +1,11 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import Screenfull from '../../src/Screenfull';
+import Screenfull from '../../src/index';
 
-class MyScroll extends React.Component {
-  
-  render() {
-
-    return (
+const MyScroll = () => (
       <div>
         <Screenfull />
-        <Typography variant="subheading" id="simple-modal-description">
+        <Typography variant="body2" id="simple-modal-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
             fringilla, nibh et maximus vehicula, tellus justo vulputate leo,
             dictum suscipit quam lacus sed tellus. Nam non erat et diam
@@ -47,8 +43,6 @@ class MyScroll extends React.Component {
           </Typography>
       </div>
     );
-  }
-}
 
 
 export default MyScroll;
